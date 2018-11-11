@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ee57228a541acab2b52d80f0dd9d971",
+    "content-hash": "cbacbb8b71e97044d6e28726d65ebf53",
     "packages": [
         {
             "name": "arrilot/bitrix-migrations",
@@ -52,6 +52,30 @@
                 "migrations"
             ],
             "time": "2018-10-25T19:00:18+00:00"
+        },
+        {
+            "name": "carcass/bitrix-installer",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "private/installer",
+                "reference": "fdf080e56bb4fd9199b5d23dc927cdc7c4eb1111",
+                "shasum": null
+            },
+            "bin": [
+                "bitrix-installer"
+            ],
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Constantine Karnaukhov",
+                    "email": "genteelknight@gmail.com"
+                }
+            ],
+            "description": "Install Bitrix from CLI"
         },
         {
             "name": "notamedia/console-jedi",

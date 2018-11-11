@@ -15,8 +15,15 @@
       "email": "genteelknight@gmail.com"
     }
   ],
+  "repositories": [
+    {
+      "type": "path",
+      "url": "private/installer"
+    }
+  ],
   "require": {
     "php": ">=7.1.0",
+    "carcass/bitrix-installer": "*",
     "notamedia/console-jedi": "^1.2.0",
     "arrilot/bitrix-migrations": "^2.1",
     "oscarotero/env": "^1.1.0"

@@ -36,7 +36,7 @@ rm -rf /tmp/bitrix /tmp/bitrix.tar.gz
 cp ${WEBROOT}/index.php /tmp/index.php
 
 # Start installer
-php -f ${WEBROOT}/installer/install.php || exit 1
+$WEBROOT/vendor/bin/bitrix-installer || exit 1
 
 # Restore homepage
 cp /tmp/index.php ${WEBROOT}/index.php -f

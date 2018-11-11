@@ -1,4 +1,11 @@
-FROM spaceonfire/nginx-php-fpm:1.0.0-beta.2
+FROM spaceonfire/nginx-php-fpm:1.0.0-beta.3
 
 ENV SOF_PRESET=bitrix \
 	PAGER=more
+
+ARG APPLICATION_ENV
+
+COPY private ./private
+COPY composer.json composer.lock ./
+RUN composer-update
+COPY ./ ./

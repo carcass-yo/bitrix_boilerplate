@@ -2,22 +2,21 @@
 
 use Bitrix\Main\Application;
 
-class BitrixComposer
-{
-    public function __construct()
-    {
-        $autoload = Application::getDocumentRoot() . '/vendor/autoload.php';
+class BitrixComposer {
+	public function __construct() {
+		$autoload = Application::getDocumentRoot() . '/vendor/autoload.php';
 
-        if (file_exists($autoload))
-        {
-            include_once $autoload;
-        }
-    }
+		// Load composer modules
+		if (file_exists($autoload)) {
+			require_once $autoload;
+		}
 
-    /**
-     * Запуск приложения.
-     */
-    public function run()
-    {
-    }
+		// Enable oscarotero/env support if installed
+		if (is_callable(['Env', 'init'])) {
+			Env::init();
+		}
+	}
+
+	public function run() {
+	}
 }

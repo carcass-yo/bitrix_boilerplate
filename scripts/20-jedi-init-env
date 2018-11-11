@@ -1,0 +1,7 @@
+#!/bin/bash
+
+WEBROOT=${WEBROOT:-/var/www/html}
+
+if [ ! -z "$APPLICATION_ENV" ]; then
+	$WEBROOT/vendor/bin/jedi env:init $APPLICATION_ENV
+fi

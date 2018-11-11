@@ -43,10 +43,3 @@ cp /tmp/index.php ${WEBROOT}/index.php -f
 
 echo 'Bitrix successfully installed'
 exit 0
-
-# Copy settings
-# cp -f ${WEBROOT}/bitrix/.settings.php.example ${WEBROOT}/bitrix/.settings.php
-# cp -f ${WEBROOT}/bitrix/php_interface/dbconn.php.example ${WEBROOT}/bitrix/php_interface/dbconn.php
-
-## Init Console.Jedi
-# vendor/bin/jedi env:init dev

@@ -16,12 +16,12 @@
  */
 
 return [
-	'dev' => [
+	'development' => [
 		'name' => 'Development',
-		'path' => 'dev'
+		'path' => 'development'
 	],
-	'prod' => [
+	'production' => [
 		'name' => 'Production',
-		'path' => 'prod',
+		'path' => 'production',
 	],
 ];

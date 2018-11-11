@@ -45,13 +45,15 @@
  *     // Values for file .settings.php
  *     'settings' => [
  *         'connections' => [
- *             'default' => [
- *                 'host' => 'host',
- *                 'database' => 'db',
- *                 'login' => 'login',
- *                 'password' => 'pass',
- *                 'className' => '\\Bitrix\\Main\\DB\\MysqlConnection',
- *                 'options' => 2,
+ *             'value' => [
+ *                 'default' => [
+ *                     'host' => 'host',
+ *                     'database' => 'db',
+ *                     'login' => 'login',
+ *                     'password' => 'pass',
+ *                     'className' => '\\Bitrix\\Main\\DB\\MysqlConnection',
+ *                     'options' => 2,
+ *                 ],
  *             ],
  *         ]
  *     ]

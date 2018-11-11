@@ -7,21 +7,21 @@
  *
  * ```php
  * return [
- *      '<key>' => [
- *          'name' => '<Environment name>',
- *          'path' => '<dir-path>'
- *      ]
+ *     '<key>' => [
+ *         'name' => '<Environment name>',
+ *         'path' => '<dir-path>'
+ *     ]
  * ];
  * ```
  */
 
 return [
-    'dev' => [
-        'name' => 'Development',
-        'path' => 'dev'
-    ],
-    'prod' => [
-        'name' => 'Production',
-        'path' => 'prod',
-    ],
+	'dev' => [
+		'name' => 'Development',
+		'path' => 'dev'
+	],
+	'prod' => [
+		'name' => 'Production',
+		'path' => 'prod',
+	],
 ];

@@ -1,29 +1,26 @@
-# Project folders and files to ignore
-/bitrix
-/upload
-vendor
-node_modules
-bower_components
+# Ignore all files that must not exist in image
+.git
+.gitignore
+docker-compose*.yml
+.editorconfig
+.gitlab-ci.yml
+Makefile*
+tslint.json
 
 # Numerous always-ignore extensions
 *.diff
 *.err
 *.orig
-*.log*
+*.log
 *.rej
 *.swo
 *.swp
 *.zip
 *.vi
 *~
-*.lock
-!**/yarn.lock
-!**/composer.lock
 
 # Dotenv
-.env
-.env.*
-!.env.example
+.env*
 
 # OS or Editor folders
 .DS_Store
@@ -45,3 +42,12 @@ nbproject
 .directory
 *.sql
 *.tar*
+
+# Project files
+**/vendor
+**/node_modules
+**/bower_components
+./bitrix
+./upload
+.openshift
+./README.md

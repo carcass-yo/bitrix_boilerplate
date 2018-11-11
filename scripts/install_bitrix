@@ -1,0 +1,52 @@
+#!/bin/bash
+
+WEBROOT=${WEBROOT:-/var/www/html}
+BITRIX_EDITION=${BITRIX_EDITION:-start}
+AVAILABLE_EDITIONS=('start' 'standard' 'small_business' 'business')
+
+if [ -d $WEBROOT/bitrix ]; then
+	echo 'Bitrix already installed. Skip...'
+	exit 0
+fi
+
+# Check edition name
+found=0
+for i in "${AVAILABLE_EDITIONS[@]}"; do
+	if [ $i == $BITRIX_EDITION ]; then
+		found=1
+		break
+	fi
+done
+
+if [ $found -ne 1 ]; then
+	echo 'Wrong edition'
+	exit 1
+fi
+unset found
+
+# Download and extract bitrix
+wget http://www.1c-bitrix.ru/download/${BITRIX_EDITION}_encode.tar.gz -O /tmp/bitrix.tar.gz || exit 1
+mkdir -p /tmp/bitrix
+tar -xzf /tmp/bitrix.tar.gz -C /tmp/bitrix
+mv /tmp/bitrix/bitrix ${WEBROOT}/bitrix
+mv /tmp/bitrix/upload ${WEBROOT}/upload
+rm -rf /tmp/bitrix /tmp/bitrix.tar.gz
+
+# Save homepage cause installer will kill it
+cp ${WEBROOT}/index.php /tmp/index.php
+
+# Start installer
+php -f ${WEBROOT}/installer/install.php || exit 1
+
+# Restore homepage
+cp /tmp/index.php ${WEBROOT}/index.php -f
+
+echo 'Bitrix successfully installed'
+exit 0
+
+# Copy settings
+# cp -f ${WEBROOT}/bitrix/.settings.php.example ${WEBROOT}/bitrix/.settings.php
+# cp -f ${WEBROOT}/bitrix/php_interface/dbconn.php.example ${WEBROOT}/bitrix/php_interface/dbconn.php
+
+## Init Console.Jedi
+# vendor/bin/jedi env:init dev

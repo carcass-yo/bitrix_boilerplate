@@ -1,12 +1,11 @@
 version: '3'
 
 services:
-  web:
+  app:
     build: ./
     networks:
     - default
-    - proxy
-    - dbaas
+    - localhost
     env_file:
     - .env
     environment:
@@ -14,11 +13,11 @@ services:
     - VIRTUAL_PORT=80
     - SKIP_CHOWN=1
     - PUID=1000
+    - SSMTP_URI=ssmtp://mailcatcher:25
+    - SSMTP_DEFAULT_FROM=info@docker.local
     volumes:
     - ./:/var/www/html:Z
 
 networks:
-  proxy:
-    external: true
-  dbaas:
+  localhost:
     external: true

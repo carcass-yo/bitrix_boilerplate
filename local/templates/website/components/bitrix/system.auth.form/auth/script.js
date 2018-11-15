@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-    if($('.js-auth_errors').length){
+	if($('.js-auth_errors').length){
 
-        $('#authModal').modal('show');
-    }
+		$('#authModal').modal('show');
+	}
 });

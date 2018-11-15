@@ -1,11 +1,13 @@
 <?
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-IncludeTemplateLangFile(__FILE__);
+use Bitrix\Main\Localization\Loc;
 
-$arTemplate = Array(
-	"NAME"=>GetMessage("LEARNING_TEMPLATE_DESCRIPTION_NAME"), 
-	"DESCRIPTION"=> GetMessage("LEARNING_TEMPLATE_DESCRIPTION_DESC")
-);
+Loc::loadLanguageFile(__FILE__);
+
+$arTemplate = [
+	'NAME' => Loc::getMessage('LEARNING_TEMPLATE_DESCRIPTION_NAME'),
+	'DESCRIPTION' => Loc::getMessage('LEARNING_TEMPLATE_DESCRIPTION_DESC'),
+];
 
 ?>

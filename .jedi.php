@@ -12,9 +12,8 @@
  */
 
 return [
-    'web-dir' => '',
-    'env-dir' => 'environments',
-    'useModules' => true,
-    'commands' => [
-    ]
+	'web-dir' => '',
+	'env-dir' => 'environments',
+	'useModules' => true,
+	'commands' => [],
 ];
